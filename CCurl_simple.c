@@ -24,17 +24,18 @@
  * chunk of memory instead of storing it in a file.
  * </DESC>
  */
-#ifndef _HTTP_HEAD_SIMPLE
-#define _HTTP_HEAD_SIMPLE
+#ifndef CCURL_SIMPLE
+#define CCURL_SIMPLE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
+#include "CCurl_simple.h"
 
-struct MemoryStruct {
+/*struct MemoryStruct {
   char *memory;
   size_t size;
-};
+};*/
 
 static size_t
 WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
@@ -56,7 +57,7 @@ WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp)
   return realsize;
 }
 
-struct MemoryStruct http(char *url)
+struct MemoryStruct http_get(char *url)
 {
   CURL *curl_handle;
   CURLcode res;
