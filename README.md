@@ -1,5 +1,7 @@
 # ccurlwrap
 A wrapper for libcurl in C that allows easy writing to memory
+## Requirements
+`libcurl` needs to be installed on the system.
 ## Usage
 Compile ccurlwrap and include the header `CCurl.h` or `CCurl_simple.h` and link to the respective object file, or do not compile and just directly include the C files `CCurl.c` or `CCurl_simple.c`.
 
